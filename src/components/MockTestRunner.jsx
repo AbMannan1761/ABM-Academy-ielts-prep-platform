@@ -913,7 +913,7 @@ export default function MockTestRunner({ onExit, onSaveResult }) {
               marginBottom: '2.5rem'
             }}>
               <h4 style={{ fontSize: '1.1rem', fontWeight: 800, marginBottom: '0.75rem', color: 'var(--bg-dark)' }}>
-                Uncle Sam's Diagnostic Improvement Plan:
+                ABM Coach's Diagnostic Improvement Plan:
               </h4>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
                 <li>✅ <strong>Strong Point:</strong> Listening comprehension on factual details and dates was near flawless.</li>

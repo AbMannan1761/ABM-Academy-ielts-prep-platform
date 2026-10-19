@@ -33,11 +33,11 @@ import {
 export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
   const [activeTab, setActiveTab] = useState('overview'); // overview, mock-tests, practice, buddy, coach, guide, vocab, results
   
-  // Uncle Sam AI Chat State
+  // ABM Coach AI Chat State
   const [chatMessages, setChatMessages] = useState([
     {
-      sender: 'sam',
-      text: "Hello! I'm Uncle Sam, your AI IELTS instructor. Paste any Writing essay here for an instant band 9 edit, or ask me for exam tips and strategies!"
+      sender: 'coach',
+      text: "Hello! I'm ABM Coach, your personal AI IELTS instructor. Paste any Writing essay here for an instant Band 9 evaluation, or ask me for exam tips and strategies!"
     }
   ]);
   const [chatInput, setChatInput] = useState('');
@@ -66,7 +66,7 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
   const completedModulesCount = modulesState.filter(m => m.completed).length;
   const progressPercent = Math.round((completedModulesCount / modulesState.length) * 100);
 
-  // Uncle Sam Chat Handler
+  // ABM Coach Chat Handler
   const handleSendMessage = () => {
     if (!chatInput.trim()) return;
 
@@ -159,7 +159,7 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
               { id: 'mock-tests', label: 'Full Mock Tests', icon: Award, highlight: true },
               { id: 'practice', label: 'Section Practice', icon: Layers },
               { id: 'buddy', label: 'Speaking Buddy', icon: Mic },
-              { id: 'coach', label: 'Uncle Sam AI Coach', icon: Bot },
+              { id: 'coach', label: 'ABM Coach AI', icon: Bot },
               { id: 'guide', label: '21-Module Course', icon: BookOpen },
               { id: 'vocab', label: 'Vocabulary Bank', icon: PenTool },
               { id: 'results', label: 'Score Analytics', icon: BarChart2 }
@@ -378,7 +378,7 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
                       <Bot style={{ width: '24px', height: '24px', color: 'var(--bg-dark)' }} />
                     </div>
                     <div>
-                      <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFFFFF' }}>Uncle Sam's Daily Advice</h3>
+                      <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFFFFF' }}>ABM Coach's Daily Advice</h3>
                       <span style={{ fontSize: '0.75rem', color: '#68DBA2', fontWeight: 700 }}>AI IELTS Instructor</span>
                     </div>
                   </div>
@@ -392,14 +392,14 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
                       Recommended Today:
                     </div>
                     <div style={{ fontSize: '0.9rem', color: '#FFFFFF', fontWeight: 600 }}>
-                      Try 1 Speaking drill with Harry on Abstract Questions.
+                      Try 1 Speaking drill with Abdullah on Abstract Questions.
                     </div>
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.5rem' }}>
                   <button onClick={() => setActiveTab('coach')} className="btn btn-primary" style={{ flex: 1, fontSize: '0.88rem' }}>
-                    Ask Uncle Sam
+                    Ask ABM Coach
                   </button>
                   <button onClick={() => setActiveTab('buddy')} className="btn btn-outline-white" style={{ flex: 1, fontSize: '0.88rem' }}>
                     Practice Speaking
@@ -514,10 +514,10 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
             <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
               <div className="badge badge-mint" style={{ marginBottom: '0.75rem' }}>AI Speaking Partners</div>
               <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--bg-dark)' }}>
-                Meet Harry & Mira
+                Meet Abdullah & Amina
               </h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                Practice live voice speaking anytime. Choose Harry for grammar precision or Mira for natural conversation flow.
+                Practice live voice speaking anytime. Choose Abdullah for grammar precision or Amina for natural conversation flow.
               </p>
             </div>
 
@@ -536,13 +536,13 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
                 }}>
                   <Mic style={{ width: '30px', height: '30px' }} />
                 </div>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--bg-dark)' }}>Harry</h3>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--bg-dark)' }}>Abdullah</h3>
                 <span style={{ color: 'var(--primary-dark)', fontSize: '0.85rem', fontWeight: 700 }}>Structured & Analytical</span>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: '1rem 0 1.5rem', lineHeight: 1.5 }}>
                   Best for improving sentence variety, avoiding grammar blunders, and mastering formal academic diction.
                 </p>
                 <button onClick={onStartMockTest} className="btn btn-dark" style={{ width: '100%' }}>
-                  Speak with Harry
+                  Speak with Abdullah
                 </button>
               </div>
 
@@ -560,20 +560,20 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
                 }}>
                   <Mic style={{ width: '30px', height: '30px' }} />
                 </div>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--bg-dark)' }}>Mira</h3>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--bg-dark)' }}>Amina</h3>
                 <span style={{ color: 'var(--primary-dark)', fontSize: '0.85rem', fontWeight: 700 }}>Conversational & Dynamic</span>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: '1rem 0 1.5rem', lineHeight: 1.5 }}>
                   Best for eliminating hesitation pauses, boosting everyday fluency, and sounding like a confident native speaker.
                 </p>
                 <button onClick={onStartMockTest} className="btn btn-primary" style={{ width: '100%' }}>
-                  Speak with Mira
+                  Speak with Amina
                 </button>
               </div>
             </div>
           </div>
         )}
 
-        {/* ================= TAB 5: UNCLE SAM AI COACH ================= */}
+        {/* ================= TAB 5: ABM COACH AI ================= */}
         {activeTab === 'coach' && (
           <div style={{ maxWidth: '850px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
@@ -582,7 +582,7 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
               </div>
               <div>
                 <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--bg-dark)' }}>
-                  Uncle Sam · 24/7 AI IELTS Instructor
+                  ABM Coach · 24/7 AI IELTS Instructor
                 </h2>
                 <span style={{ color: '#16A34A', fontSize: '0.85rem', fontWeight: 700 }}>● Online & Ready to Review</span>
               </div>
@@ -610,7 +610,7 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
                       backgroundColor: msg.sender === 'user' ? 'var(--bg-dark)' : 'var(--primary-light)',
                       color: msg.sender === 'user' ? '#FFFFFF' : 'var(--bg-dark)',
                       borderTopRightRadius: msg.sender === 'user' ? '4px' : '16px',
-                      borderTopLeftRadius: msg.sender === 'sam' ? '4px' : '16px'
+                      borderTopLeftRadius: msg.sender !== 'user' ? '4px' : '16px'
                     }}>
                       {msg.text}
                     </div>
@@ -618,7 +618,7 @@ export default function Dashboard({ user, onStartMockTest, onOpenOnboarding }) {
                 ))}
                 {isCoachThinking && (
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>
-                    Uncle Sam is evaluating and composing Band 9 feedback...
+                    ABM Coach is evaluating and composing Band 9 feedback...
                   </div>
                 )}
               </div>

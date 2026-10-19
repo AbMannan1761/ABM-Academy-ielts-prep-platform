@@ -20,7 +20,7 @@ import {
 
 export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOnboarding }) {
   const [activeModuleTab, setActiveModuleTab] = useState('writing');
-  const [activeSpeakingBuddy, setActiveSpeakingBuddy] = useState('harry');
+  const [activeSpeakingBuddy, setActiveSpeakingBuddy] = useState('abdullah');
 
   // Band Calculator State
   const [calcListening, setCalcListening] = useState(32); // out of 40 (approx 7.5)
@@ -620,7 +620,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
       </section>
 
       {/* ============================================================
-          Meet The AI Mentors (Uncle Sam & Speaking Partners)
+          Meet The AI Mentors (ABM Coach & Speaking Partners)
           ============================================================ */}
       <section style={{ padding: '5rem 0', backgroundColor: 'var(--bg-dark)', color: '#FFFFFF' }}>
         <div className="container">
@@ -628,7 +628,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3.5rem' }}>
             <div className="badge badge-mint" style={{ marginBottom: '0.75rem' }}>AI Mentors</div>
             <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#FFFFFF' }}>
-              Meet Uncle Sam & Your Speaking Partners
+              Meet ABM Coach & Your Speaking Partners
             </h2>
             <p style={{ color: 'var(--text-light-muted)', fontSize: '1.05rem', marginTop: '0.5rem' }}>
               24/7 personalized coaching, score analysis, and live voice conversations tailored to your exact weaknesses.
@@ -641,7 +641,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
             gap: '2rem'
           }}>
             
-            {/* Uncle Sam Card */}
+            {/* ABM Coach Card */}
             <div style={{
               background: 'var(--bg-dark-card)',
               border: '1px solid rgba(255, 255, 255, 0.12)',
@@ -665,7 +665,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
                     <Bot style={{ width: '32px', height: '32px', color: '#12231C' }} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FFFFFF' }}>Uncle Sam</h3>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FFFFFF' }}>ABM Coach</h3>
                     <span style={{ fontSize: '0.85rem', color: '#68DBA2', fontWeight: 700 }}>Your 24/7 Personal IELTS Instructor</span>
                   </div>
                 </div>
@@ -689,7 +689,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
                 className="btn btn-primary"
                 style={{ width: '100%' }}
               >
-                Chat with Uncle Sam
+                Chat with ABM Coach
               </button>
             </div>
 
@@ -717,48 +717,48 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
                     <Mic style={{ width: '30px', height: '30px', color: '#FFFFFF' }} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FFFFFF' }}>Harry & Mira</h3>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FFFFFF' }}>Abdullah & Amina</h3>
                     <span style={{ fontSize: '0.85rem', color: '#68DBA2', fontWeight: 700 }}>AI Voice Speaking Partners</span>
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem' }}>
                   <button
-                    onClick={() => setActiveSpeakingBuddy('harry')}
+                    onClick={() => setActiveSpeakingBuddy('abdullah')}
                     style={{
                       flex: 1,
                       padding: '0.6rem',
                       borderRadius: '8px',
-                      background: activeSpeakingBuddy === 'harry' ? '#68DBA2' : 'rgba(255,255,255,0.1)',
-                      color: activeSpeakingBuddy === 'harry' ? '#12231C' : '#FFFFFF',
+                      background: activeSpeakingBuddy === 'abdullah' ? '#68DBA2' : 'rgba(255,255,255,0.1)',
+                      color: activeSpeakingBuddy === 'abdullah' ? '#12231C' : '#FFFFFF',
                       fontWeight: 700,
                       border: 'none',
                       cursor: 'pointer'
                     }}
                   >
-                    Harry (Structured & Clear)
+                    Abdullah (Structured & Clear)
                   </button>
                   <button
-                    onClick={() => setActiveSpeakingBuddy('mira')}
+                    onClick={() => setActiveSpeakingBuddy('amina')}
                     style={{
                       flex: 1,
                       padding: '0.6rem',
                       borderRadius: '8px',
-                      background: activeSpeakingBuddy === 'mira' ? '#68DBA2' : 'rgba(255,255,255,0.1)',
-                      color: activeSpeakingBuddy === 'mira' ? '#12231C' : '#FFFFFF',
+                      background: activeSpeakingBuddy === 'amina' ? '#68DBA2' : 'rgba(255,255,255,0.1)',
+                      color: activeSpeakingBuddy === 'amina' ? '#12231C' : '#FFFFFF',
                       fontWeight: 700,
                       border: 'none',
                       cursor: 'pointer'
                     }}
                   >
-                    Mira (Natural Fluency)
+                    Amina (Natural Fluency)
                   </button>
                 </div>
 
                 <p style={{ color: 'var(--text-light-muted)', lineHeight: 1.6, marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                  {activeSpeakingBuddy === 'harry'
-                    ? 'Harry focuses on calm, structured questions, grammatical precision, and clear enunciation. Perfect for candidates struggling with sentence structures.'
-                    : 'Mira conducts dynamic, flowing conversational interviews, challenging you on idiomatic expressions and rapid idea formulation.'}
+                  {activeSpeakingBuddy === 'abdullah'
+                    ? 'Abdullah focuses on calm, structured questions, grammatical precision, and clear enunciation. Perfect for candidates struggling with sentence structures.'
+                    : 'Amina conducts dynamic, flowing conversational interviews, challenging you on idiomatic expressions and rapid idea formulation.'}
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginBottom: '2rem' }}>
@@ -776,7 +776,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
                 className="btn btn-outline-white"
                 style={{ width: '100%' }}
               >
-                Start Speaking with {activeSpeakingBuddy === 'harry' ? 'Harry' : 'Mira'}
+                Start Speaking with {activeSpeakingBuddy === 'abdullah' ? 'Abdullah' : 'Amina'}
               </button>
             </div>
 
@@ -1050,11 +1050,11 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#FFFFFF' }}>
                     <CheckCircle style={{ width: '16px', height: '16px', color: '#68DBA2' }} />
-                    <span>Uncle Sam AI Essay Proofreader</span>
+                    <span>ABM Coach AI Essay Proofreader</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#FFFFFF' }}>
                     <CheckCircle style={{ width: '16px', height: '16px', color: '#68DBA2' }} />
-                    <span>Harry & Mira Speaking Partner Sessions</span>
+                    <span>Abdullah & Amina Speaking Partner Sessions</span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: '#FFFFFF' }}>
                     <CheckCircle style={{ width: '16px', height: '16px', color: '#68DBA2' }} />

@@ -88,7 +88,7 @@ export default function Footer({ setCurrentView }) {
                 onMouseEnter={(e) => e.target.style.color = '#68DBA2'}
                 onMouseLeave={(e) => e.target.style.color = 'var(--text-light-muted)'}
               >
-                Uncle Sam — AI Writing Tutor
+                ABM Coach — AI Writing Tutor
               </a>
               <a 
                 onClick={() => { setCurrentView('dashboard'); window.dispatchEvent(new CustomEvent('switch-dash-tab', { detail: 'guide' })); }}

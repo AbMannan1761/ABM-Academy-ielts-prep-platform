@@ -129,10 +129,10 @@ export default function OnboardingModal({ isOpen, onClose, onComplete }) {
           </div>
           <div>
             <div style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--primary-dark)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Uncle Sam · AI Coach
+              ABM Coach · AI IELTS Instructor
             </div>
             <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--bg-dark)', marginTop: '0.2rem' }}>
-              {currentStep === 1 && "Hey! I'm Uncle Sam, your personal IELTS instructor. Have you taken the IELTS exam before?"}
+              {currentStep === 1 && "Hey! I'm ABM Coach, your personal IELTS instructor. Have you taken the IELTS exam before?"}
               {currentStep === 2 && "Great! What overall band score are you aiming to achieve?"}
               {currentStep === 3 && "When are you planning to sit for your actual official IELTS exam?"}
               {currentStep === 4 && "Which section do you find most challenging or need the most guidance with?"}

@@ -11,10 +11,10 @@ A state-of-the-art computer-based IELTS preparation platform built with React, V
   - Reading (official split-screen layout with text passage on the left and questions on the right).
   - Writing (Task 1 and Task 2 word count tracker and instant AI rubric evaluation).
   - Speaking (interactive voice recording via Web Speech API with live transcript and scoring).
-- **Uncle Sam — 24/7 AI IELTS Tutor**:
+- **ABM Coach — 24/7 AI IELTS Tutor**:
   - Chat interface for line-by-line essay editing, vocabulary upgrades, and personalized study strategies.
-- **Buddy — Voice Speaking Partners**:
-  - Harry (Structured and grammar-focused) & Mira (Dynamic conversational fluency).
+- **AI Voice Speaking Partners (Abdullah & Amina)**:
+  - Abdullah (Structured and grammar-focused) & Amina (Dynamic conversational fluency).
 - **21-Module Complete IELTS Course**:
   - Detailed lessons from grammar foundations to Band 9 essay blueprints with interactive completion tracking.
 - **Academic Vocabulary Library**:
