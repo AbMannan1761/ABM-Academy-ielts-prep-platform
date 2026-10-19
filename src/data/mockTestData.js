@@ -7,7 +7,20 @@ export const mockListeningTest = {
   title: 'Academic IELTS Listening Practice Test 1',
   durationMinutes: 30,
   totalQuestions: 10,
-  audioUrl: 'https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg', // Sample audio ambience
+  audioUrl: './audio/listening-test-1.mp3',
+  listeningScript: `You will hear a telephone conversation between a customer and an accommodation officer. First you have some time to look at questions 1 to 5.
+Officer: Good morning, Student Accommodation Office. How can I help you?
+Sarah: Hello, I'm looking for a place to stay starting this term. My name is Sarah Jenkins.
+Officer: Could you spell your surname please?
+Sarah: Yes, it is J-E-N-K-I-N-S.
+Officer: Thank you, Sarah. And what date are you looking to move in?
+Sarah: Preferably on the 15th of November.
+Officer: And what is your weekly budget?
+Sarah: My maximum weekly rent would be 180 pounds.
+Officer: Any specific room preference?
+Sarah: A single room with a balcony if possible.
+Officer: And your contact telephone number?
+Sarah: It's 07700 900456.`,
   sections: [
     {
       sectionNumber: 1,

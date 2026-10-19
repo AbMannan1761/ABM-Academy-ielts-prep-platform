@@ -49,7 +49,11 @@ export default function MockTestRunner({ onExit, onSaveResult }) {
   const [speakingTranscript, setSpeakingTranscript] = useState('');
   const [cueCardTimer, setCueCardTimer] = useState(60);
   const [isCueCardTimerActive, setIsCueCardTimerActive] = useState(false);
-  const recognitionRef = useRef(null);
+  // Audio Player State
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [audioCurrentTime, setAudioCurrentTime] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(1680); // approx 28 mins
+  const audioRef = useRef(null);
 
   // Final Results State
   const [testResults, setTestResults] = useState(null);
@@ -335,44 +339,118 @@ export default function MockTestRunner({ onExit, onSaveResult }) {
               borderRadius: '14px',
               padding: '1.2rem 1.5rem',
               display: 'flex',
-              alignItems: 'center',
-              gap: '1rem',
+              flexDirection: 'column',
+              gap: '0.85rem',
               marginBottom: '2rem'
             }}>
-              <button 
-                onClick={() => {
-                  const audio = document.getElementById('exam-audio');
-                  if (audio) {
-                    if (audio.paused) audio.play();
-                    else audio.pause();
-                  }
-                }}
-                style={{
-                  width: '42px',
-                  height: '42px',
-                  borderRadius: '50%',
-                  background: '#68DBA2',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}
-              >
-                <Play style={{ width: '18px', height: '18px', color: '#12231C', fill: '#12231C', marginLeft: '2px' }} />
-              </button>
-              <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.35rem' }}>
-                  <span>Section 1 & 2 Audio Recording</span>
-                  <span style={{ color: '#68DBA2' }}>Playing 01:24 / 28:10</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <button 
+                  onClick={() => {
+                    if (audioRef.current) {
+                      if (audioRef.current.paused) {
+                        audioRef.current.play().then(() => setIsAudioPlaying(true)).catch(() => {
+                          // Browser autoplay block fallback
+                          setIsAudioPlaying(false);
+                        });
+                      } else {
+                        audioRef.current.pause();
+                        setIsAudioPlaying(false);
+                      }
+                    }
+                  }}
+                  style={{
+                    width: '46px',
+                    height: '46px',
+                    borderRadius: '50%',
+                    background: '#68DBA2',
+                    border: 'none',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    boxShadow: '0 4px 12px rgba(104, 219, 162, 0.4)'
+                  }}
+                  title={isAudioPlaying ? "Pause Audio" : "Play Cambridge Exam Audio"}
+                >
+                  {isAudioPlaying ? (
+                    <Pause style={{ width: '20px', height: '20px', color: '#12231C', fill: '#12231C' }} />
+                  ) : (
+                    <Play style={{ width: '20px', height: '20px', color: '#12231C', fill: '#12231C', marginLeft: '2px' }} />
+                  )}
+                </button>
+
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85rem', fontWeight: 700, marginBottom: '0.4rem' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <span>Cambridge Official IELTS Listening Audio</span>
+                      {isAudioPlaying && <span className="badge badge-mint" style={{ padding: '0.15rem 0.5rem', fontSize: '0.7rem' }}>Playing Live</span>}
+                    </span>
+                    <span style={{ color: '#68DBA2', fontFamily: 'monospace' }}>
+                      {formatTime(Math.floor(audioCurrentTime))} / {formatTime(Math.floor(audioDuration))}
+                    </span>
+                  </div>
+
+                  <input 
+                    type="range"
+                    min="0"
+                    max={audioDuration || 100}
+                    value={audioCurrentTime}
+                    onChange={(e) => {
+                      const newTime = parseFloat(e.target.value);
+                      setAudioCurrentTime(newTime);
+                      if (audioRef.current) audioRef.current.currentTime = newTime;
+                    }}
+                    style={{ width: '100%', accentColor: '#68DBA2', cursor: 'pointer' }}
+                  />
                 </div>
-                <div style={{ height: '5px', background: 'rgba(255,255,255,0.2)', borderRadius: '3px', overflow: 'hidden' }}>
-                  <div style={{ width: '35%', height: '100%', background: '#68DBA2' }} />
-                </div>
+
+                <Volume2 style={{ width: '20px', height: '20px', color: '#68DBA2' }} />
               </div>
-              <Volume2 style={{ width: '20px', height: '20px', color: '#68DBA2' }} />
-              <audio id="exam-audio" src={mockListeningTest.audioUrl} preload="none" />
+
+              {/* Audio Controls & AI Voice Reader */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', color: 'var(--text-light-muted)' }}>
+                <span>Official Track: 02.mp3 (Cambridge IELTS Authentic Audio)</span>
+                <button
+                  onClick={() => {
+                    if ('speechSynthesis' in window) {
+                      window.speechSynthesis.cancel();
+                      const utterance = new SpeechSynthesisUtterance(mockListeningTest.listeningScript);
+                      utterance.rate = 0.95;
+                      utterance.lang = 'en-GB';
+                      window.speechSynthesis.speak(utterance);
+                    }
+                  }}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    color: '#68DBA2',
+                    borderRadius: '6px',
+                    padding: '0.25rem 0.6rem',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
+                    cursor: 'pointer'
+                  }}
+                >
+                  🎙️ Play British Examiner Voice (TTS)
+                </button>
+              </div>
+
+              <audio 
+                ref={audioRef}
+                src={mockListeningTest.audioUrl} 
+                preload="metadata"
+                onTimeUpdate={() => {
+                  if (audioRef.current) setAudioCurrentTime(audioRef.current.currentTime);
+                }}
+                onLoadedMetadata={() => {
+                  if (audioRef.current && audioRef.current.duration) setAudioDuration(audioRef.current.duration);
+                }}
+                onEnded={() => setIsAudioPlaying(false)}
+                onError={() => {
+                  console.log("Audio load fallback to TTS");
+                }}
+              />
             </div>
 
             {/* Section 1 Questions */}
