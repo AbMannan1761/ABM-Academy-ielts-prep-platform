@@ -7,7 +7,7 @@ export const mockListeningTest = {
   title: 'Academic IELTS Listening Practice Test 1',
   durationMinutes: 30,
   totalQuestions: 10,
-  audioUrl: './audio/listening-test-1.mp3',
+  audioUrl: `${import.meta.env.BASE_URL}audio/listening-test-1.mp3`,
   listeningScript: `You will hear a telephone conversation between a customer and an accommodation officer. First you have some time to look at questions 1 to 5.
 Officer: Good morning, Student Accommodation Office. How can I help you?
 Sarah: Hello, I'm looking for a place to stay starting this term. My name is Sarah Jenkins.
