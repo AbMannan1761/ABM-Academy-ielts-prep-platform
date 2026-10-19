@@ -236,7 +236,7 @@ export default function LandingPage({ onStartMockTest, onOpenDashboard, onOpenOn
                 <span style={{ color: 'var(--primary-dark)' }}>Win Your IELTS Registration Fee.</span>
               </h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
-                Complete 5 full computer-based IELTS mock tests on Your English Prep. Qualify for our Final Mock Exam, score the highest, and we pay your entire official British Council / IDP IELTS exam fee!
+                Complete 5 full computer-based IELTS mock tests on ABM Academy. Qualify for our Final Mock Exam, score the highest, and we pay your entire official British Council / IDP IELTS exam fee!
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>

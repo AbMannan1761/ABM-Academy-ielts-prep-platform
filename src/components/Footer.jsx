@@ -42,11 +42,11 @@ export default function Footer({ setCurrentView }) {
                 <GraduationCap style={{ width: '22px', height: '22px', color: '#68DBA2' }} />
               </div>
               <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', fontWeight: 800 }}>
-                Your English Prep
+                ABM Academy
               </span>
             </div>
             <p style={{ color: 'var(--text-light-muted)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.2rem' }}>
-              Bangladesh's most authentic AI-powered computer-based IELTS mock test platform. Get certified-level automated band scores in under 30 seconds.
+              ABM Academy — Bangladesh's most authentic AI-powered computer-based IELTS mock test platform. Get certified-level automated band scores in under 30 seconds.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#68DBA2', fontSize: '0.85rem', fontWeight: 600 }}>
               <ShieldCheck style={{ width: '16px', height: '16px' }} />
@@ -129,7 +129,7 @@ export default function Footer({ setCurrentView }) {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                 <Mail style={{ width: '18px', height: '18px', color: '#68DBA2', flexShrink: 0 }} />
-                <span>yourenglishprep@elvianlimited.com</span>
+                <span>support@abmacademy.com</span>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function Footer({ setCurrentView }) {
           color: 'var(--text-light-muted)'
         }}>
           <div>
-            © {new Date().getFullYear()} <strong>Your English Prep</strong> — a product of <span style={{ color: '#68DBA2', fontWeight: 700 }}>Elvian Ltd.</span> All rights reserved.
+            © {new Date().getFullYear()} <strong>ABM Academy</strong>. All rights reserved.
           </div>
           <div>
             Trade Licence: TRAD/DNCC/010876/2026

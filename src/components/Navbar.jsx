@@ -78,7 +78,7 @@ export default function Navbar({ currentView, setCurrentView, user, onOpenOnboar
               display: 'block',
               lineHeight: 1.1
             }}>
-              Your English Prep
+              ABM Academy
             </span>
             <span style={{ 
               fontSize: '0.7rem', 

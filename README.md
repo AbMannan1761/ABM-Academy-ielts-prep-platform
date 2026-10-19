@@ -1,16 +1,37 @@
-# React + Vite
+# ABM Academy — AI-Powered IELTS Preparation Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A state-of-the-art computer-based IELTS preparation platform built with React, Vite, and modern CSS.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Full Computer-Based Mock Test Simulator**:
+  - Listening (audio playback simulation, auto-advancing sections, 40 questions).
+  - Reading (official split-screen layout with text passage on the left and questions on the right).
+  - Writing (Task 1 and Task 2 word count tracker and instant AI rubric evaluation).
+  - Speaking (interactive voice recording via Web Speech API with live transcript and scoring).
+- **Uncle Sam — 24/7 AI IELTS Tutor**:
+  - Chat interface for line-by-line essay editing, vocabulary upgrades, and personalized study strategies.
+- **Buddy — Voice Speaking Partners**:
+  - Harry (Structured and grammar-focused) & Mira (Dynamic conversational fluency).
+- **21-Module Complete IELTS Course**:
+  - Detailed lessons from grammar foundations to Band 9 essay blueprints with interactive completion tracking.
+- **Academic Vocabulary Library**:
+  - Band 7–9 words with Bangla translations, English definitions, collocations, and IELTS examiner examples.
+- **Official IELTS Band Calculator**:
+  - Implements official British Council / IDP .25 and .75 rounding rules.
 
-## React Compiler
+## 💻 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + Vite
+- Lucide React Icons
+- Canvas Confetti
+- Vanilla CSS Design System
 
-## Expanding the Oxlint configuration
+## 🛠️ Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173/` in your browser.
